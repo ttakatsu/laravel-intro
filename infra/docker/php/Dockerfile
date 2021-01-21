@@ -28,4 +28,11 @@ RUN apt-get update && \
 COPY ./infra/docker/php/php-fpm.d/zzz-www.conf /usr/local/etc/php-fpm.d/zzz-www.conf
 COPY ./infra/docker/php/php.ini /usr/local/etc/php/php.ini
 
+# change www-data user and groups id to 1000(for wsl user id).
+ARG USER_UID=1000
+ARG USER_GID=${USER_UID}
+RUN set -x; \
+  groupmod -g ${USER_GID} www-data && \
+  usermod -u ${USER_UID} -g www-data www-data
+
 WORKDIR /work/backend
