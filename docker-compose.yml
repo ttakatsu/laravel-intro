@@ -7,7 +7,6 @@ services:
     build:
       context: .
       dockerfile: ./infra/docker/php/Dockerfile
-    user: "www-data:www-data"
     volumes:
       - php-fpm-socket:/var/run/php-fpm
       - ./backend:/work/backend
