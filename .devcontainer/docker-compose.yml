@@ -20,7 +20,7 @@ services:
       context: .
       dockerfile: .devcontainer/Dockerfile
       args:
-        VARIANT: 7.3
+        VARIANT: 7.4
         INSTALL_NODE: "false"
         NODE_VERSION: "lts/*"
     
