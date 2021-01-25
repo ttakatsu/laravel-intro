@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BookRequest;
 use App\Models\Book;
 use Illuminate\Http\Request;
 
@@ -27,11 +28,11 @@ class BookController extends Controller
     }
 
     /**
-     * @param \Illuminate\Http\Request  $request
+     * @param \App\Http\Requests\BookRequest $request
      * @param $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(BookRequest $request, $id)
     {
         $book = Book::findOrFail($id);
         $book->name = $request->input('name');
@@ -61,7 +62,11 @@ class BookController extends Controller
         return view('book.create', compact('book'));
     }
 
-    public function store(Request $request)
+    /**
+     * @param BookRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function store(BookRequest $request)
     {
         $book = new Book();
         $book->name = $request->input('name');

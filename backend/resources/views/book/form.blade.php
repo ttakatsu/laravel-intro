@@ -6,6 +6,9 @@
     </div>
     <div class="row">
         <div class="col-md-8 col-md-offset-1">
+
+            @include('book.message')
+
             @if($target == 'store') {{-- 新規作成 --}}
                 <form action="{{ route('book.store') }}" method="post">
             @elseif($target == 'update') {{-- 更新 --}}
