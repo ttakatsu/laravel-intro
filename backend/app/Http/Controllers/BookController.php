@@ -58,7 +58,7 @@ class BookController extends Controller
     {
         // 空の$bookをビューに渡す
         $book = new Book();
-        return view('book.create');
+        return view('book.create', compact('book'));
     }
 
     public function store(Request $request)
