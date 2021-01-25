@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Laravel Sample Book Edit</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
-<body>
+@extends('book/layout')
+@section('content')
 <div class="container ops-main">
     <div class="row">
         <div class="col-md-6">
@@ -36,5 +31,3 @@
         </div>
     </div>
 </div>
-</body>
-</html>
