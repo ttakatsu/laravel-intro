@@ -20,7 +20,7 @@ class BookController extends Controller
     public function edit($id)
     {
         // DBからidのBookを取得
-        $book = Book::findOfFail($id);
+        $book = Book::findOrFail($id);
 
         // 取得した値をビュー book/edit にわたす
         return view('book/edit', compact('book'));
