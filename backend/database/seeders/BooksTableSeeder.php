@@ -21,18 +21,18 @@ class BooksTableSeeder extends Seeder
         // 初期データを用意
         $books = [
             [
-                'name' => 'PHP Book',
-                'price' => 2000,
+                'name'   => 'PHP Book',
+                'price'  => 2000,
                 'author' => 'PHPER',
             ],
             [
-                'name' => 'Laravel Book',
-                'price' => 3000,
+                'name'   => 'Laravel Book',
+                'price'  => 3000,
                 'author' => null,
             ],
             [
-                'name' => 'Ruby Book',
-                'price' => 2500,
+                'name'   => 'Ruby Book',
+                'price'  => 2500,
                 'author' => 'Rubyist',
             ],
         ];
