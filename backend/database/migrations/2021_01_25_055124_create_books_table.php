@@ -20,7 +20,7 @@ class CreateBooksTable extends Migration
             $table->increments('id');
             $table->string('name', 50);
             $table->integer('price');
-            $table->string('author', 50);
+            $table->string('author', 50)->nullable();
             $table->timestamps();
         });
     }
