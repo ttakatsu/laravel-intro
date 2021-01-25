@@ -14,7 +14,7 @@ class BookController extends Controller
         $books = Book::all();
 
         // 取得した値をビュー book/index にわたす
-        return view('book/index', compact('books'));
+        return view('book.index', compact('books'));
     }
 
     public function edit($id)
@@ -23,7 +23,7 @@ class BookController extends Controller
         $book = Book::findOrFail($id);
 
         // 取得した値をビュー book/edit にわたす
-        return view('book/edit', compact('book'));
+        return view('book.edit', compact('book'));
     }
 
     /**

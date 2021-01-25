@@ -1,4 +1,4 @@
-@extends('book/layout')
+@extends('book.layout')
 @section('content')
-@include('book/form', ['target' => 'store'])
+@include('book.form', ['target' => 'store'])
 @endsection

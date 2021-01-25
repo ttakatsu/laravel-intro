@@ -8,9 +8,9 @@
         <div class="col-md-8 col-md-offset-1">
             @if($target == 'store') {{-- 新規作成 --}}
                 <form action="{{ route('book.store') }}" method="post">
-            @elseif($target == 'update')
-            <form action="{{ route('book.update', $book->id) }}" method="post">
-                <input type="hidden" name="_method" value="PUT">
+            @elseif($target == 'update') {{-- 更新 --}}
+                <form action="{{ route('book.update', $book->id) }}" method="post">
+                    <input type="hidden" name="_method" value="PUT">
             @endif
                 @csrf
 

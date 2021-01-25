@@ -1,4 +1,4 @@
-@extends('book/layout')
+@extends('book.layout')
 @section('content')
 <div class="container ops-main">
     <div class="row">
@@ -39,3 +39,4 @@
         </div>
     </div>
 </div>
+@endsection
