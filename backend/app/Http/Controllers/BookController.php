@@ -26,10 +26,15 @@ class BookController extends Controller
         return view('book/edit', compact('book'));
     }
 
+    /**
+     * @param \Illuminate\Http\Request  $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function update(Request $request, $id)
     {
         $book = Book::findOrFail($id);
-        $book->name = $request->name;
+        $book->name = $request->input('name');
         $book->price = $request->price;
         $book->author = $request->author;
         $book->save();
@@ -37,10 +42,32 @@ class BookController extends Controller
         return redirect('/book');
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function destroy($id)
     {
         $book = Book::findOrFail($id);
         $book->delete();
+
+        return redirect('/book');
+    }
+
+    public function create()
+    {
+        // 空の$bookをビューに渡す
+        $book = new Book();
+        return view('book.create');
+    }
+
+    public function store(Request $request)
+    {
+        $book = new Book();
+        $book->name = $request->input('name');
+        $book->price = $request->input('price');
+        $book->author = $request->input('author');
+        $book->save();
 
         return redirect('/book');
     }
